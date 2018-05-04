@@ -1,29 +1,19 @@
-// Functions returning functions
+// IIFE : Immediately Invoked Function Expressions (IIFE)
 
-function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function(name) {
-            console.log(name + ',  can you explain what is UX design?');
-        }
-    } else if (job === 'teacher') {
-        return function(name) {
-            console.log('What subject do you teach, ' + name + '?');
-        }
-    } else {
-        return function(name) {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
+function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
 }
 
-var teacherQuestion = interviewQuestion('teacher');
-var designerQuestion = interviewQuestion('designer');
+game();
 
-teacherQuestion('John');
-designerQuestion('Mike');
-designerQuestion('Yudha');
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})();
 
-
-
-// Second way to return the functions
-interviewQuestion('teacher')('Mark');
+// console.log(score);
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
