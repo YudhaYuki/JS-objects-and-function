@@ -22,3 +22,8 @@ var designerQuestion = interviewQuestion('designer');
 teacherQuestion('John');
 designerQuestion('Mike');
 designerQuestion('Yudha');
+
+
+
+// Second way to return the functions
+interviewQuestion('teacher')('Mark');
