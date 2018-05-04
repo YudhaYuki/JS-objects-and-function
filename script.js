@@ -1,19 +1,14 @@
-// IIFE : Immediately Invoked Function Expressions (IIFE)
+// Closure
 
-function game() {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
+function retirement(retirementAge) {
+    var a = ' years before retirement.';
+    return function(yearOfBirth) {
+        var age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
 }
 
-game();
+var retirementUS = retirement(66);
+retirementUS(1990);
 
-(function () {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-})();
-
-// console.log(score);
-(function (goodLuck) {
-    var score = Math.random() * 10;
-    console.log(score >= 5 - goodLuck);
-})(5);
+retirement(66)(1990);
