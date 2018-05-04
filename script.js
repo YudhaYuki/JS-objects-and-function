@@ -1,24 +1,18 @@
-// Primitives vs objects
+// Passing functions as arguments
 
-// Example one (PRIMITIVES)
-var a = 23;
-var b = a;
-a = 46;
-console.log(a);
-console.log(b);
+var years = [1990, 1965, 1937, 2005, 1998];
 
+function arrayCalc(arr, fn) {
+    var arrRes = [];
+    for (i = 0; i < arr.length; i++) {
+        arrRes.push(fn(arr[i]));
+    }
+    return arrRes;
+}
 
-// Example two (OBJECTS)
-var obj1 = {
-    name: 'John',
-    age: 26
-};
+function calculateAge(el) {
+    return 2016 - el;
+}
 
-var obj2 = obj1;
-obj1.age = 30;
-
-console.log(obj1.age);
-console.log(obj2.age);
-
-
-// Example three (Function)
+var ages = arrayCalc(years, calculateAge);
+console.log(ages);
