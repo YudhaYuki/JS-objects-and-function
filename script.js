@@ -1,21 +1,24 @@
-// Object.create
+// Primitives vs objects
 
-var personProto = {
-    calculateAge: function() {
-        console.log(2016 - this.yearOfBirth);
-    }
-}
+// Example one (PRIMITIVES)
+var a = 23;
+var b = a;
+a = 46;
+console.log(a);
+console.log(b);
 
-// ONE way to inherit the prototype
-var john = Object.create(PersonProto);
-john.name = 'John';
-john.yearOfBirth = 1990;
-john.job = 'teacher';
 
-// SECOND way to inherit the prototype
-var jane = Object.create(PersonProto, 
-{
-    name: { value: 'Jane' },
-    yearOfBirth: { value: 1969 },
-    job: { value: 'designer' }   
-});
+// Example two (OBJECTS)
+var obj1 = {
+    name: 'John',
+    age: 26
+};
+
+var obj2 = obj1;
+obj1.age = 30;
+
+console.log(obj1.age);
+console.log(obj2.age);
+
+
+// Example three (Function)
