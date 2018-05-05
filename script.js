@@ -1,40 +1,39 @@
-// Closure
+// Bind, Call, and apply
 
-// Example 1
-/*
-function retirement(retirementAge) {
-    var a = ' years before retirement.';
-    return function(yearOfBirth) {
-        var age = 2016 - yearOfBirth;
-        console.log((retirementAge - age) + a);
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log(`Good ${timeOfDay}, Ladies and gentlemen! I'm ${this.name}, I'm a ${this.job} and I'm ${this.age} years old.` );
+        } else if (style === 'friendly') {
+            console.log(`Hey, what's up? I'm ${this.name}, I'm a ${this.job} and I'm ${this.age} years old, have a nice ${timeOfDay}`);
+        }   
     }
 }
 
-var retirementUS = retirement(66);
-var retirementGermany = retirement(65);
-var retirementIceland = retirement(67);
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
 
-retirementGermany(1990);
-retirementUS(1990);
-retirementIceland(1990);
+john.presentation('friendly', 'morning');
+
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// It wont work, it just to show
+// john.presentation.apply(emily, ['friendly', 'afternoon']);
 
 
-// retirement(66)(1990);
-*/
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
+johnFriendly('evening');
 
 
 
+var emilyFormal = john.presentation.bind(emily, 'formal');
 
-function interviewQuestion(job) {
-    return function(name) {
-        if (job === 'designer') {
-            console.log(name + ',  can you explain what is UX design?');            
-        } else if (job === 'teacher') {
-            console.log('What subject do you teach, ' + name + '?');            
-        } else {
-            console.log('Hello ' + name + ', what do you do?');            
-        }        
-    }
-}
-
-interviewQuestion('teacher')('John');
+emilyFormal('afternoon');
