@@ -52,7 +52,14 @@ Question.prototype.displayQuestion = function() {
     }
 }
 
-
+// Question VI
+Question.prototype.displayAnswer = function(ans) {
+    if (ans === this.correct) {
+        console.log('Correct answer')
+    } else {
+        console.log('Wrong answer. TRY AGAIN !');
+    }
+}
 
 
 // Question II
@@ -85,4 +92,7 @@ questions[n].displayQuestion();
 var answer = parseInt(prompt('Please select the correct answer.'));
 
 
+// Question VI
+
+questions[n].displayAnswer(answer);
 
