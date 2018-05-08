@@ -42,6 +42,17 @@ function Question(question, answers, correct) {
     this.correct = correct;
 }
 
+
+// Question IV 
+Question.prototype.displayQuestion = function() {
+    console.log(this.question);
+
+    for (var i = 0; i < this.answers.length; i++) {
+        console.log(i + ': ' + this.answers[i]);
+    }
+}
+
+
 // Question II
 var q1 = new Question(
             'Is JavaScript the coolest programming language in the world?',
@@ -51,12 +62,19 @@ var q2 = new Question(
             'What is the name of this course\'s teacher?',
             ['John', 'Michael', 'Jonas'],
             2 );
-var q2 = new Question(
+var q3 = new Question(
             'What does best decribe coding?',
             ['Boring', 'Hard', 'Fun', 'Tedious'],
             2 );
 
+
 // Question III
 var questions = [q1, q2, q3];
+
+
+// Question IV
+var n = Math.floor(Math.random() * questions.length);
+
+questions[n].displayQuestion();
 
 
