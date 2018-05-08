@@ -35,8 +35,28 @@ c) correct answer (I would use a number for this)
 */
 
 
+// Question I
 function Question(question, answers, correct) {
     this.question = question;
     this.answers = answers;
     this.correct = correct;
 }
+
+// Question II
+var q1 = new Question(
+            'Is JavaScript the coolest programming language in the world?',
+            ['Yes', 'No'],
+            0 );
+var q2 = new Question(
+            'What is the name of this course\'s teacher?',
+            ['John', 'Michael', 'Jonas'],
+            2 );
+var q2 = new Question(
+            'What does best decribe coding?',
+            ['Boring', 'Hard', 'Fun', 'Tedious'],
+            2 );
+
+// Question III
+var questions = [q1, q2, q3];
+
+
