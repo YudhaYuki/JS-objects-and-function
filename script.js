@@ -43,7 +43,7 @@ function Question(question, answers, correct) {
 }
 
 
-// Question IV 
+// Question IV (Continue/logic for IV down there)
 Question.prototype.displayQuestion = function() {
     console.log(this.question);
 
@@ -51,6 +51,8 @@ Question.prototype.displayQuestion = function() {
         console.log(i + ': ' + this.answers[i]);
     }
 }
+
+
 
 
 // Question II
@@ -76,5 +78,11 @@ var questions = [q1, q2, q3];
 var n = Math.floor(Math.random() * questions.length);
 
 questions[n].displayQuestion();
+
+
+// Question V
+// parseInt changes string into integer
+var answer = parseInt(prompt('Please select the correct answer.'));
+
 
 
